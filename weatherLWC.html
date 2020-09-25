@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Get Weather" icon-name="utility:frozen">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small" size="10">
+                <lightning-input type="text" name="EnterCity" label="Enter City" value={city} onchange={onCityChange}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="3">
+                <b>Temperature: {temperature}</b>
+                <div class="img">
+                    <img src={iconWeahter}>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div class="slds-align_absolute-center">
+            <lightning-button label="Get Weather" variant="brand" onclick={getTemp}></lightning-button>
+        </div>
+    </lightning-card>
+
+    <div class="slds-align_absolute-center">
+        <lightning-datatable key-field="id" data={parameters.data} hide-checkbox-column="true" columns={columns}>
+        </lightning-datatable>
+    </div>
+</template>
